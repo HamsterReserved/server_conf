@@ -28,7 +28,7 @@ else
 fi
 
 
-local return_code="%(?..%B%F{red}%?|%f%b)"
+local return_code="%(?..%B %F{red}%?|%f%b)"
 
 local user_host="${PR_USER}%F{cyan}@${PR_HOST}"
 local current_dir="%B%F{blue}%~%f%b"
@@ -42,7 +42,7 @@ elif which rbenv &> /dev/null; then # detect Simple Ruby Version Management
 fi
 local git_branch='$(git_prompt_info)'
 
-PROMPT="${user_host}${return_code}${current_dir}${rvm_ruby} ${git_branch}$PR_PROMPT "
+PROMPT="${user_host}${return_code} ${current_dir}${rvm_ruby} ${git_branch}$PR_PROMPT "
 #RPROMPT="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}("
